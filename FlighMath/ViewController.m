@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "math.h"
 
 @interface ViewController ()
 
@@ -17,6 +18,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+- (NSNumber *)sqrt:(NSNumber *)number{
+    
+    return [NSNumber numberWithDouble: sqrt([number doubleValue])];
+}
+
+- (NSUInteger)factorial:(NSUInteger)number{
+
+    NSUInteger answer = 1;
+    
+    for (NSUInteger count = 2; count <= number; count++) {
+        
+        answer *= count;
+    }
+    
+    return answer;
 }
 
 - (void)didReceiveMemoryWarning {
