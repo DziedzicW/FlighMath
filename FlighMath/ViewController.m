@@ -25,11 +25,11 @@
     return [NSNumber numberWithDouble: sqrt([number doubleValue])];
 }
 
-- (NSUInteger)factorial:(NSUInteger)number{
+- (NSInteger)factorial:(NSInteger)number{
 
-    NSUInteger answer = 1;
+    NSInteger answer = 1;
     
-    for (NSUInteger count = 2; count <= number; count++) {
+    for (NSInteger count = 2; count <= number; count++) {
         
         answer *= count;
     }
