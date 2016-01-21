@@ -16,7 +16,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    NSLog(@"%ld" , [self factorial:5]);
+    NSLog(@"%lf", [self sqrt:9]);
+    
+}
+
+- (NSInteger)factorial:(NSInteger)a {
+    
+    if (a < 0) {
+        NSLog(@"Error");
+        return -1;
+    }
+    NSInteger b = 1;
+    for (NSInteger i = 2 ; i <= a; i++) {
+        b*=i;
+    }
+    return b;
+    
+}
+
+- (CGFloat) sqrt:(CGFloat)c {
+    
+    return sqrt(c);
+    
 }
 
 - (void)didReceiveMemoryWarning {
