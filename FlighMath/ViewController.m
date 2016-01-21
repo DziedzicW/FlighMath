@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "math.h"
+#import <math.h>
 
 @interface ViewController ()
 
@@ -50,6 +50,10 @@
 
 - (NSInteger)factorial:(NSInteger)number{
 
+    if (number < 0) {
+        return -1;
+    }
+    
     NSInteger answer = 1;
     
     for (NSInteger count = 2; count <= number; count++) {
