@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <math.h>
 
 @interface ViewController ()
 
@@ -18,28 +19,29 @@
     [super viewDidLoad];
     
     NSLog(@"%ld" , [self factorial:5]);
-    NSLog(@"%lf", [self sqrt:9]);
+    NSLog(@"%@", [self sqrt:@2.25]);
     
 }
 
-- (NSInteger)factorial:(NSInteger)a {
+- (NSNumber *)sqrt:(NSNumber *)number{
     
-    if (a < 0) {
-        NSLog(@"Error");
+    return [NSNumber numberWithDouble: sqrt([number doubleValue])];
+}
+
+- (NSInteger)factorial:(NSInteger)number{
+
+    if (number < 0) {
         return -1;
     }
-    NSInteger b = 1;
-    for (NSInteger i = 2 ; i <= a; i++) {
-        b*=i;
+    
+    NSInteger answer = 1;
+    
+    for (NSInteger count = 2; count <= number; count++) {
+        
+        answer *= count;
     }
-    return b;
     
-}
-
-- (CGFloat) sqrt:(CGFloat)c {
-    
-    return sqrt(c);
-    
+    return answer;
 }
 
 - (void)didReceiveMemoryWarning {
